@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "React component for transportation of modals, lightboxes, loading bars... to document.body",
   "main": "build/portal",
-  "jsnext:main": "build/portal",
+  "jsnext:main": "lib/portal",
   "files": [
     "*.md",
     "LICENSE",
