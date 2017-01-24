@@ -5,22 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.PortalTarget = undefined;
 
-var _index = require('/Users/kevinahuber/Desktop/Development/react-portal/node_modules/redbox-react/lib/index.js');
-
-var _index2 = _interopRequireDefault(_index);
-
-var _index3 = require('/Users/kevinahuber/Desktop/Development/react-portal/node_modules/react-transform-catch-errors/lib/index.js');
-
-var _index4 = _interopRequireDefault(_index3);
-
-var _react2 = require('react');
-
-var _react3 = _interopRequireDefault(_react2);
-
-var _index5 = require('/Users/kevinahuber/Desktop/Development/react-portal/node_modules/react-transform-hmr/lib/index.js');
-
-var _index6 = _interopRequireDefault(_index5);
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _portaltarget = require('./portaltarget');
@@ -31,6 +15,10 @@ Object.defineProperty(exports, 'PortalTarget', {
     return _interopRequireDefault(_portaltarget).default;
   }
 });
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = require('react-dom');
 
@@ -44,37 +32,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var _components = {
-  Portal: {
-    displayName: 'Portal'
-  }
-};
-
-var _UsersKevinahuberDesktopDevelopmentReactPortalNode_modulesReactTransformHmrLibIndexJs2 = (0, _index6.default)({
-  filename: 'lib/portal.js',
-  components: _components,
-  locals: [module],
-  imports: [_react3.default]
-});
-
-var _UsersKevinahuberDesktopDevelopmentReactPortalNode_modulesReactTransformCatchErrorsLibIndexJs2 = (0, _index4.default)({
-  filename: 'lib/portal.js',
-  components: _components,
-  locals: [],
-  imports: [_react3.default, _index2.default]
-});
-
-function _wrapComponent(id) {
-  return function (Component) {
-    return _UsersKevinahuberDesktopDevelopmentReactPortalNode_modulesReactTransformHmrLibIndexJs2(_UsersKevinahuberDesktopDevelopmentReactPortalNode_modulesReactTransformCatchErrorsLibIndexJs2(Component, id), id);
-  };
-}
-
 var KEYCODES = {
   ESCAPE: 27
 };
 
-var Portal = _wrapComponent('Portal')(function (_React$Component) {
+var Portal = function (_React$Component) {
   _inherits(Portal, _React$Component);
 
   function Portal() {
@@ -235,7 +197,7 @@ var Portal = _wrapComponent('Portal')(function (_React$Component) {
       var children = props.children;
       // https://gist.github.com/jimfb/d99e0678e9da715ccf6454961ef04d1b
       if (typeof props.children.type === 'function') {
-        children = _react3.default.cloneElement(props.children, { closePortal: this.closePortal });
+        children = _react2.default.cloneElement(props.children, { closePortal: this.closePortal });
       }
 
       this.portal = _reactDom2.default.unstable_renderSubtreeIntoContainer(this, children, this.node, this.props.onUpdate);
@@ -244,34 +206,34 @@ var Portal = _wrapComponent('Portal')(function (_React$Component) {
     key: 'render',
     value: function render() {
       if (this.props.openByClickOn) {
-        return _react3.default.cloneElement(this.props.openByClickOn, { onClick: this.handleWrapperClick });
+        return _react2.default.cloneElement(this.props.openByClickOn, { onClick: this.handleWrapperClick });
       }
       return null;
     }
   }]);
 
   return Portal;
-}(_react3.default.Component));
+}(_react2.default.Component);
 
 exports.default = Portal;
 
 
 Portal.propTypes = {
-  children: _react3.default.PropTypes.element.isRequired,
-  openByClickOn: _react3.default.PropTypes.element,
-  closeOnEsc: _react3.default.PropTypes.bool,
-  closeOnOutsideClick: _react3.default.PropTypes.bool,
-  isOpen: _react3.default.PropTypes.bool,
+  children: _react2.default.PropTypes.element.isRequired,
+  openByClickOn: _react2.default.PropTypes.element,
+  closeOnEsc: _react2.default.PropTypes.bool,
+  closeOnOutsideClick: _react2.default.PropTypes.bool,
+  isOpen: _react2.default.PropTypes.bool,
   isOpened: function isOpened(props, propName, componentName) {
     if (typeof props[propName] !== 'undefined') {
       return new Error('Prop `' + propName + '` supplied to `' + componentName + '` was renamed to `isOpen`.\n          https://github.com/tajo/react-portal/pull/82.');
     }
     return null;
   },
-  onOpen: _react3.default.PropTypes.func,
-  onClose: _react3.default.PropTypes.func,
-  beforeClose: _react3.default.PropTypes.func,
-  onUpdate: _react3.default.PropTypes.func
+  onOpen: _react2.default.PropTypes.func,
+  onClose: _react2.default.PropTypes.func,
+  beforeClose: _react2.default.PropTypes.func,
+  onUpdate: _react2.default.PropTypes.func
 };
 
 Portal.defaultProps = {
